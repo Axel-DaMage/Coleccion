@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoMarket API - Documentación y Ejemplos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-leaf"></i>
+                    <h1>EcoMarket API</h1>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <!-- Swagger Access Section -->
+            <section class="swagger-section">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-code"></i>
+                        <h2>Documentación Swagger</h2>
+                    </div>                    <div class="card-content">
+                        <p>Accede a la documentación completa de la API con ejemplos interactivos y pruebas en tiempo real.</p>
+                        <a href="/swagger-ui/index.html" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-external-link-alt"></i>
+                            Abrir Swagger UI
+                        </a>
+                        <a href="/v3/api-docs" class="btn btn-secondary" target="_blank">
+                            <i class="fas fa-file-code"></i>
+                            Ver OpenAPI JSON
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- API Endpoints Overview -->
+            <section class="endpoints-section">
+                <h2 class="section-title">
+                    <i class="fas fa-sitemap"></i>
+                    Endpoints Disponibles
+                </h2>
+                
+                <div class="endpoints-grid">
+                    <!-- Productos -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <i class="fas fa-box"></i>
+                            <h3>Productos</h3>
+                            <span class="endpoint-path">/api/productos</span>
+                        </div>
+                        <div class="endpoint-content">
+                            <p>Gestión completa de productos del catálogo</p>
+                            <div class="crud-operations">
+                                <div class="operation get">
+                                    <span class="method">GET</span>
+                                    <span class="description">Obtener todos los productos</span>
+                                </div>
+                                <div class="operation get">
+                                    <span class="method">GET</span>
+                                    <span class="description">Obtener producto por ID</span>
+                                </div>
+                                <div class="operation post">
+                                    <span class="method">POST</span>
+                                    <span class="description">Crear nuevo producto</span>
+                                </div>
+                                <div class="operation put">
+                                    <span class="method">PUT</span>
+                                    <span class="description">Actualizar producto</span>
+                                </div>
+                                <div class="operation delete">
+                                    <span class="method">DELETE</span>
+                                    <span class="description">Eliminar producto</span>
+                                </div>                            </div>
+                            <div class="post-example">
+                                <h4>Ejemplo POST:</h4>
+                                <pre><code>{
+  "nombreProducto": "Manzanas Orgánicas",
+  "stock": 50
+}</code></pre>
+                            </div>
+                            <a href="/swagger-ui/index.html#/producto-controller" class="btn btn-outline" target="_blank">
+                                Ver en Swagger
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Clientes -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <i class="fas fa-users"></i>
+                            <h3>Clientes</h3>
+                            <span class="endpoint-path">/api/clientes</span>
+                        </div>
+                        <div class="endpoint-content">
+                            <p>Administración de clientes registrados</p>
+                            <div class="crud-operations">
+                                <div class="operation get">
+                                    <span class="method">GET</span>
+                                    <span class="description">Obtener todos los clientes</span>
+                                </div>
+                                <div class="operation get">
+                                    <span class="method">GET</span>
+                                    <span class="description">Obtener cliente por RUN</span>
+                                </div>
+                                <div class="operation post">
+                                    <span class="method">POST</span>
+                                    <span class="description">Crear nuevo cliente</span>
+                                </div>
+                                <div class="operation put">
+                                    <span class="method">PUT</span>
+                                    <span class="description">Actualizar cliente</span>
+                                </div>
+                                <div class="operation delete">
+                                    <span class="method">DELETE</span>
+                                    <span class="description">Eliminar cliente</span>
+                                </div>                            </div>
+                            <div class="post-example">
+                                <h4>Ejemplo POST:</h4>
+                                <pre><code>{
+  "run": "12345678",
+  "dv": "9",
+  "nombres": "Juan Carlos",
+  "apellidos": "González López"
+}</code></pre>
+                            </div>
+                            <a href="/swagger-ui/index.html#/cliente-controller" class="btn btn-outline" target="_blank">
+                                Ver en Swagger
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Compras -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <i class="fas fa-shopping-cart"></i>
+                            <h3>Compras</h3>
+                            <span class="endpoint-path">/api/compras</span>
+                        </div>
+                        <div class="endpoint-content">
+                            <p>Gestión de transacciones y compras</p>
+                            <div class="crud-operations">
+                                <div class="operation get">
+                                    <span class="method">GET</span>
+                                    <span class="description">Obtener todas las compras</span>
+                                </div>
+                                <div class="operation get">
+                                    <span class="method">GET</span>
+                                    <span class="description">Obtener compra por ID</span>
+                                </div>
+                                <div class="operation post">
+                                    <span class="method">POST</span>
+                                    <span class="description">Crear nueva compra</span>
+                                </div>
+                                <div class="operation put">
+                                    <span class="method">PUT</span>
+                                    <span class="description">Actualizar compra</span>
+                                </div>
+                                <div class="operation delete">
+                                    <span class="method">DELETE</span>
+                                    <span class="description">Eliminar compra</span>
+                                </div>                            </div>
+                            <div class="post-example">
+                                <h4>Ejemplo POST:</h4>
+                                <pre><code>{
+  "fechaCompra": "2025-06-23",
+  "numeroFactura": "FAC-001234",
+  "cliente": {
+    "run": "12345678"
+  },
+  "sucursal": {
+    "idSucursal": 1
+  }
+}</code></pre>
+                            </div>
+                            <a href="/swagger-ui/index.html#/compra-controller" class="btn btn-outline" target="_blank">
+                                Ver en Swagger
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Regiones -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Regiones</h3>
+                            <span class="endpoint-path">/api/regiones</span>
+                        </div>
+                        <div class="endpoint-content">
+                            <p>Administración de regiones geográficas</p>
+                            <div class="crud-operations">
+                                <div class="operation get">
+                                    <span class="method">GET</span>
+                                    <span class="description">Obtener todas las regiones</span>
+                                </div>
+                                <div class="operation get">
+                                    <span class="method">GET</span>
+                                    <span class="description">Obtener región por ID</span>
+                                </div>
+                                <div class="operation post">
+                                    <span class="method">POST</span>
+                                    <span class="description">Crear nueva región</span>
+                                </div>
+                                <div class="operation put">
+                                    <span class="method">PUT</span>
+                                    <span class="description">Actualizar región</span>
+                                </div>
+                                <div class="operation delete">
+                                    <span class="method">DELETE</span>
+                                    <span class="description">Eliminar región</span>
+                                </div>                            </div>
+                            <div class="post-example">
+                                <h4>Ejemplo POST:</h4>
+                                <pre><code>{
+  "idRegion": 1,
+  "nombreRegion": "Región Metropolitana"
+}</code></pre>
+                            </div>
+                            <a href="/swagger-ui/index.html#/region-controller" class="btn btn-outline" target="_blank">
+                                Ver en Swagger
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Sucursales -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <i class="fas fa-store"></i>
+                            <h3>Sucursales</h3>
+                            <span class="endpoint-path">/api/sucursales</span>
+                        </div>
+                        <div class="endpoint-content">
+                            <p>Gestión de sucursales y ubicaciones</p>
+                            <div class="crud-operations">
+                                <div class="operation get">
+                                    <span class="method">GET</span>
+                                    <span class="description">Obtener todas las sucursales</span>
+                                </div>
+                                <div class="operation get">
+                                    <span class="method">GET</span>
+                                    <span class="description">Obtener sucursal por ID</span>
+                                </div>
+                                <div class="operation post">
+                                    <span class="method">POST</span>
+                                    <span class="description">Crear nueva sucursal</span>
+                                </div>
+                                <div class="operation put">
+                                    <span class="method">PUT</span>
+                                    <span class="description">Actualizar sucursal</span>
+                                </div>
+                                <div class="operation delete">
+                                    <span class="method">DELETE</span>
+                                    <span class="description">Eliminar sucursal</span>
+                                </div>                            </div>
+                            <div class="post-example">
+                                <h4>Ejemplo POST:</h4>
+                                <pre><code>{
+  "idSucursal": 1,
+  "direccionSucursal": "Av. Providencia 1234, Local 5",
+  "comuna": {
+    "idComuna": 1
+  }
+}</code></pre>
+                            </div>
+                            <a href="/swagger-ui/index.html#/sucursal-controller" class="btn btn-outline" target="_blank">
+                                Ver en Swagger
+                            </a>
+                        </div>
+                    </div>                    <!-- Comunas -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <i class="fas fa-city"></i>
+                            <h3>Comunas</h3>
+                            <span class="endpoint-path">/api/comunas</span>
+                        </div>
+                        <div class="endpoint-content">
+                            <p>Administración de comunas y localidades</p>
+                            <div class="crud-operations">
+                                <div class="operation get">
+                                    <span class="method">GET</span>
+                                    <span class="description">Obtener todas las comunas</span>
+                                </div>
+                                <div class="operation get">
+                                    <span class="method">GET</span>
+                                    <span class="description">Obtener comuna por ID</span>
+                                </div>
+                                <div class="operation post">
+                                    <span class="method">POST</span>
+                                    <span class="description">Crear nueva comuna</span>
+                                </div>
+                                <div class="operation put">
+                                    <span class="method">PUT</span>
+                                    <span class="description">Actualizar comuna</span>
+                                </div>
+                                <div class="operation delete">
+                                    <span class="method">DELETE</span>
+                                    <span class="description">Eliminar comuna</span>
+                                </div>                            </div>
+                            <div class="post-example">
+                                <h4>Ejemplo POST:</h4>
+                                <pre><code>{
+  "idComuna": 1,
+  "nombreComuna": "Santiago",
+  "region": {
+    "idRegion": 1
+  }
+}</code></pre>
+                            </div>
+                            <a href="/swagger-ui/index.html#/comuna-controller" class="btn btn-outline" target="_blank">
+                                Ver en Swagger
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Detalles -->
+                    <div class="endpoint-card">
+                        <div class="endpoint-header">
+                            <i class="fas fa-list-ul"></i>
+                            <h3>Detalles</h3>
+                            <span class="endpoint-path">/api/detalles</span>
+                        </div>
+                        <div class="endpoint-content">
+                            <p>Gestión de detalles de compras y productos</p>
+                            <div class="crud-operations">
+                                <div class="operation get">
+                                    <span class="method">GET</span>
+                                    <span class="description">Obtener todos los detalles</span>
+                                </div>
+                                <div class="operation get">
+                                    <span class="method">GET</span>
+                                    <span class="description">Obtener detalle por ID</span>
+                                </div>
+                                <div class="operation post">
+                                    <span class="method">POST</span>
+                                    <span class="description">Crear nuevo detalle</span>
+                                </div>
+                                <div class="operation put">
+                                    <span class="method">PUT</span>
+                                    <span class="description">Actualizar detalle</span>
+                                </div>
+                                <div class="operation delete">
+                                    <span class="method">DELETE</span>
+                                    <span class="description">Eliminar detalle</span>
+                                </div>                            </div>
+                            <div class="post-example">
+                                <h4>Ejemplo POST:</h4>
+                                <pre><code>{
+  "cantidad": 3,
+  "precioUnitario": 1500,
+  "metodoPago": "Efectivo",
+  "compra": {
+    "idCompra": 1
+  },
+  "producto": {
+    "idProducto": 1
+  }
+}</code></pre>
+                            </div>
+                            <a href="/swagger-ui/index.html#/detalle-controller" class="btn btn-outline" target="_blank">
+                                Ver en Swagger
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Start Guide -->
+            <section class="guide-section">
+                <div class="card">
+                    <div class="card-header">
+                        <i class="fas fa-rocket"></i>
+                        <h2>Guía de Inicio Rápido</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="guide-steps">
+                            <div class="step">
+                                <div class="step-number">1</div>
+                                <div class="step-content">
+                                    <h3>Abre Swagger UI</h3>
+                                    <p>Haz clic en el botón "Abrir Swagger UI" para acceder a la documentación interactiva.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">2</div>
+                                <div class="step-content">
+                                    <h3>Explora los Endpoints</h3>
+                                    <p>Navega por los diferentes controladores para ver todos los endpoints disponibles.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">3</div>
+                                <div class="step-content">
+                                    <h3>Prueba las Operaciones</h3>
+                                    <p>Usa el botón "Try it out" en Swagger para probar cada endpoint con datos reales.</p>
+                                </div>
+                            </div>
+                            <div class="step">
+                                <div class="step-number">4</div>
+                                <div class="step-content">
+                                    <h3>Revisa las Respuestas</h3>
+                                    <p>Examina las respuestas y códigos de estado para entender el comportamiento de la API.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 EcoMarket</p>
+        </div>
+    </footer>
+</body>
+</html>
